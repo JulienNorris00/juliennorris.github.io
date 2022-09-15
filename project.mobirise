@@ -1,0 +1,166 @@
+{
+  "settings": {
+    "name": "juliennorris",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startupamp",
+      "title": "StartupAMP",
+      "styling": {
+        "primaryColor": "#e3699a",
+        "secondaryColor": "#ec7499",
+        "successColor": "#361291",
+        "infoColor": "#30d5a5",
+        "warningColor": "#022e93",
+        "dangerColor": "#f8b79a",
+        "mainFont": "Source Sans Pro",
+        "display1Font": "Source Sans Pro",
+        "display1Size": 5.6,
+        "display2Font": "Source Sans Pro",
+        "display2Size": 3.4,
+        "display3Font": "Source Sans Pro",
+        "display3Size": 2.4,
+        "display4Font": "Source Sans Pro",
+        "display4Size": 1.8,
+        "display5Font": "Source Sans Pro",
+        "display5Size": 1.4,
+        "display6Font": "Source Sans Pro",
+        "display6Size": 1,
+        "display7Font": "Source Sans Pro",
+        "display7Size": 0.8,
+        "isRoundedButtons": false,
+        "isScrollToTopButton": false,
+        "arrowColor": "#e3699a",
+        "bodyPadding": false,
+        "bodyBG": "#ffffff"
+      },
+      "additionalSetColors": []
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.3.10",
+    "siteFonts": [],
+    "imageResize": true,
+    "favicon": "@PROJECT_PATH@/assets/images/juliennorris-128x136.png",
+    "mbrsiteDomain": "swoyxu6quo",
+    "canonical-url": false,
+    "robotsSwitcher": false,
+    "sitemapSwitcher": false,
+    "sitemapSwitcherAuto": false,
+    "siteUrl": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "pwa-switcher": false,
+    "uniqCompNum": 2,
+    "versionPublish": "5.3.10"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "juliennorris",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value",
+              "& when (@gradient)": {
+                "background": "linear-gradient(135deg, @bg-value 0%, @bgcolor2 100%)"
+              }
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "& when not (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background-color": "@overlayColor",
+                  "opacity": "@overlayOpacity"
+                }
+              },
+              "& when (@overlayGradient)": {
+                ".mbr-overlay": {
+                  "background": "linear-gradient(135deg, @overlayColor 0%, @ovcolor2 100%)",
+                  "opacity": "@overlayOpacity"
+                }
+              }
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#0a193b",
+              "text-align": "left"
+            },
+            ".line-wrap": {
+              "display": "inline-block",
+              "width": "100%"
+            },
+            ".line": {
+              "display": "inline-block",
+              "width": "30%",
+              "height": "4px",
+              "background-color": "@lineColor",
+              "margin-left": "-3rem",
+              "margin-top": "0.5rem",
+              "margin-bottom": "2rem"
+            },
+            "h1": {
+              "margin": "0"
+            },
+            ".mbr-section-title, .line-wrap": {
+              "color": "#0a193b"
+            },
+            "p": {
+              "margin-top": "2rem",
+              "margin-bottom": "2rem"
+            }
+          },
+          "_name": "header2",
+          "_sourceTheme": "startupamp",
+          "_customHTML": "<section class=\"header2\" group=\"Headers\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#0a193b\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#f1f4fa\" selected>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background1.jpg\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Background Gradient\" name=\"gradient\" condition=\"bg.type == 'color'\" checked>\n        <input type=\"color\" title=\"Color 2\" name=\"bgcolor2\" value=\"#fede9a\" condition=\"gradient == true && bg.type == 'color'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type == 'image'\">\n        <input type=\"checkbox\" title=\"Overlay Gradient\" name=\"overlayGradient\" condition=\"overlay == true && bg.type == 'image'\" checked>\n        <input type=\"color\" title=\"Overlay Color 2\" name=\"ovcolor2\" value=\"#022e93\" condition=\"overlay == true && overlayGradient == true && bg.type == 'image'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type == 'image'\">\n    </mbr-parameters>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class=\"container\">\n        <div class=\"mbr-row\">\n            <div class=\"mbr-col-lg-8 mbr-col-md-12\">\n                <h1 class=\"mbr-fonts-style mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title, .line-wrap\"><b>Julien Norris&nbsp;</b><a href=\"https://bitcoin.org/bitcoin.pdf\" class=\"text-danger\" target=\"_blank\">Bitcoin </a><a href=\"https://en.wikipedia.org/wiki/DJ_(disambiguation)\" class=\"text-primary\" target=\"_blank\">DJ</a></h1>\n                <p class=\"mbr-fonts-style mbr-text\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\">Contact:&nbsp;<a href=\"https://twitter.com/norris_julien\" class=\"text-primary\" target=\"_blank\">twitter.com/norris_julien</a><br>TIP: <a href=\"http://tippin.me/@norris_julien\" class=\"text-danger\" target=\"_blank\">tippin.me/@norris_julien</a>\n<br>Book: <a href=\"http://vida.page/norris_julien\" class=\"text-info\" target=\"_blank\">vida.page/norris_julien</a>\n<br>Pay: <a href=\"https://getalby.com/lightning_addresses/juliennorris\" class=\"text-warning\" target=\"_blank\">juliennorris@getalby</a><a href=\"https://twitter.com/norris_julien\" class=\"text-primary\" target=\"_blank\"><br></a><br><br></p>\n                <div class=\"line-wrap\">\n                    <div class=\"line\"></div>\n                </div>\n                <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\">\n                    <a class=\"btn btn-lg mbr-editable-button btn-info\" href=\"https://mobiri.se\">LOREM IPSUM DOLOR</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "thtX4y1qZk",
+          "_anchor": "header2-1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "soundcloud",
+          "_isSecondary": true,
+          "typeCompatible": "isAMP",
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
+            "amp-soundcloud": {
+              "height": "~\"@{scHeight}px\" !important"
+            }
+          },
+          "_name": "soundcloudamp2",
+          "_sourceTheme": "startupamp",
+          "_customHTML": "<section class=\"soundcloudamp2\" group=\"Media\" plugins=\"amp-main, amp-soundcloud\">\n\t<mbr-parameters>\n\t\t<!-- Block parameters controls (Blue \"Gear\" panel) -->\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"5\">\n\n\t\t<input type=\"range\" inline title=\"Soundcloud Height\" name=\"scHeight\" min=\"400\" max=\"1000\" step=\"50\" value=\"450\">\n\n\t\t<input type=\"text\" title=\"Playlist ID\" name=\"playlistId\" value=\"191427863\">\n\t\t<input type=\"color\" title=\"Soundcloud Color\" name=\"scColor\" value=\"#313131\">\n\n\t\t<fieldset type=\"background\" name=\"bg\">\n\t\t\t<input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/200w.gif\">\n\t\t\t<input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n\t\t</fieldset>\n\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n\t\t<input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"bg.type!='color' && overlay\">\n\t\t<!-- End block parameters -->\n\t</mbr-parameters>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\"></div>\n\t<div class=\"container\">\n\t\t<div class=\"sound-block\">\n\t\t\t<amp-soundcloud class=\"mobirise-loader\" layout=\"fixed-height\" height=\"450\" data-playlistid=\"{{playlistId}}\" data-color=\"313131\">\n\t\t\t\t<div placeholder class=\"placeholder\"></div>\n\t\t\t</amp-soundcloud>\n\t\t</div>\n\t</div>\n</section>",
+          "_cid": "thtX128lHF",
+          "_anchor": "soundcloudamp2-0",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
